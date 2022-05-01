@@ -13,7 +13,7 @@ plugins:
   - react
   - '@typescript-eslint'
 rules: {
-  "comma-dangle": ["error", "always"],
+  "comma-dangle": ["error", "only-multiline"],
 }
 settings:
   react:
