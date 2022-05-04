@@ -1,11 +1,11 @@
 import React from 'react';
-import Banner from './components/Banner.component';
+import Plateau from './components/plateau.component';
 import './styles/App.scss';
 
 const App:React.FC = () => {
   return (
-    <Banner />
+    <Plateau />
   );
-}
+};
 
 export default App;
