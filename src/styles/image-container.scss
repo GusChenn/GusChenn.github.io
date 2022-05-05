@@ -12,5 +12,10 @@
 }
 
 .subtitle {
-  color: map-get(colors.$pallete, darkGrey);
+  color: map-get(colors.$pallete, darkGreen);
+  font-family: 'Satisfy', cursive;
+  font-size: 80px;
+  position: absolute;
+  top: 270px;
+  left: 100px;
 }
