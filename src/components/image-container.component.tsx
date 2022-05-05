@@ -1,5 +1,5 @@
 import React from 'react';
-import './../styles/image-container.scss'
+import './../styles/image-container.scss';
 
 interface IImageContainerProps {
   src: string;
