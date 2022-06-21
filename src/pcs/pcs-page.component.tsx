@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import * as THREE from 'three';
+import { Canvas } from '@react-three/fiber';
 
 interface IPcsPageProps {};
 
