@@ -4,6 +4,7 @@ import styled from "styled-components";
 export const H1Styled = styled.h1`
   font-size: 4em;
   text-align: center;
+  padding: 20px;
 `;
 
 interface IH1Props {
