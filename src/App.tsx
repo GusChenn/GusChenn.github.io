@@ -6,7 +6,7 @@ import './pimas/styles/App.scss';
 
 const App:React.FC = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path='/pimas' element={<Plateau />} />
         <Route path='/pcs' element={<PcsPage />} />
