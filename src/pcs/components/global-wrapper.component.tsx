@@ -4,15 +4,14 @@ const GlobalWrapper= styled.div`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  position: absolute;
+  font-family: 'IBM Plex Mono', monospace;
 
-  background: #dddddd;
-  height: 100%;
-  width: 100%;
+  background: #202020;
+  height: 100vh;
+  width: 100vw;
 
-  canvas {
-    height: 600px;
-  }
-  
+  display: block;
 `;
 
 export default GlobalWrapper;

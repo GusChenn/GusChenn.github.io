@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { Suspense } from 'react';
+import GltfModel from './gltf-model.component';
 
 const Earth = (): React.ReactElement => {
+
   return (
-    <mesh>
-      <sphereGeometry args={[2, 30, 15]}/>
-      <meshLambertMaterial color="blue"/>
-    </mesh>
+    <Suspense fallback={null}>
+      <GltfModel modelPath={'./../earth.glb'} scale={0.3} position={[0,-0.3,0]} />
+    </Suspense>
   );
 };
 

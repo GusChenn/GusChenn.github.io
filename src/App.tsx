@@ -9,7 +9,7 @@ const App:React.FC = () => {
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path='/pimas' element={<Plateau />} />
-        <Route path='/pcs' element={<PcsPage />} />
+        <Route path='/' element={<PcsPage />} />
       </Routes>
     </BrowserRouter>
   );
