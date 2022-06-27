@@ -9,6 +9,8 @@ import Nomes from './resources/nomes.svg';
 
 interface IPcsPageProps {};
 
+const positionTest = [[-5, 0, 1], [0, 5, 1]];
+
 const PcsPage = ({}: IPcsPageProps): React.ReactElement => {
   return (
     <GlobalWrapper>
@@ -28,14 +30,14 @@ const PcsPage = ({}: IPcsPageProps): React.ReactElement => {
         height: '100vh',
         width: '100vw',
       }}>
-        <OrbitControls enableZoom={false} />
+        <OrbitControls />
         <ambientLight intensity={0.4} />
         <directionalLight color='white' position={[3, 3, -1]} intensity={1} />
         <directionalLight color='white' position={[-3, -1, -1]} intensity={0.1} />
         <Earth />
+        <Airplanes />
         <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
       </Canvas>
-      <Airplanes />
     </GlobalWrapper>
   );
 };
