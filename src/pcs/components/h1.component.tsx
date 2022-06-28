@@ -1,10 +1,13 @@
 import React from 'react';
 import styled from "styled-components";
 
-export const H1Styled = styled.h1`
-  font-size: 4em;
-  text-align: center;
-  padding: 20px;
+const H1Styled = styled.h1`
+  position: absolute;
+  top: 5%;
+  left: 15px;
+  width: 20%;
+  font-size: 2.3em;
+  color: #bebebe;
 `;
 
 interface IH1Props {

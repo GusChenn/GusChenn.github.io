@@ -7,11 +7,12 @@ import { useFrame } from "@react-three/fiber";
 interface IAirplanesProps {
   airplaneGltf: any;
   airplaneRef: any;
+  airplaneDataSet: number;
 };
 
 const NORMALIZATION_FACTOR = 3300000;
 
-const Airplanes = ({ airplaneGltf, airplaneRef }: IAirplanesProps): React.ReactElement => {
+const Airplanes = ({ airplaneGltf, airplaneRef, airplaneDataSet }: IAirplanesProps): React.ReactElement => {
   const dataFilter = (data: any) => {
     const flightPositions: any[] = [];
     data.data.forEach((flight: any) => {
@@ -35,7 +36,7 @@ const Airplanes = ({ airplaneGltf, airplaneRef }: IAirplanesProps): React.ReactE
       <primitive
         ref={airplaneRef}
         object={airplaneGltf.scene}
-        position={convertedPositions[2]}
+        position={convertedPositions[airplaneDataSet]}
         scale={0.005}
       />
     </>

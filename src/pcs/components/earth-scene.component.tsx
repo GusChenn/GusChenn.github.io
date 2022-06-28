@@ -4,12 +4,19 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import AirplanesWithData from './airplanes-with-data.component';
 
 const earthModelPath = './../earth.glb';
-const airplaneModelPath = './../perpendicular_airplane.glb';
+const blueAirplaneModelPath = './../perpendicular_airplane_blue.glb';
+const redAirplaneModelPath = './../perpendicular_airplane_red.glb';
 
-const EarthScene = (): React.ReactElement => {
+interface IEarthSceneProps {
+  velocity: number;
+};
+
+const EarthScene = ({ velocity }: IEarthSceneProps): React.ReactElement => {
   const earthRef = useRef<any>();
-  const airplaneRef = useRef<any>();
-  const airplaneGltf = useLoader(GLTFLoader, airplaneModelPath);
+  const blueAirplaneRef = useRef<any>();
+  const redAirplaneRef = useRef<any>();
+  const blueAirplaneGltf = useLoader(GLTFLoader, blueAirplaneModelPath);
+  const redAirplaneGltf = useLoader(GLTFLoader, redAirplaneModelPath);
   const earthGltf = useLoader(GLTFLoader, earthModelPath);
 
   return (
@@ -20,7 +27,7 @@ const EarthScene = (): React.ReactElement => {
         position={[0, 0, 0]}
         scale={0.3}
       />
-      <AirplanesWithData airplaneGltf={airplaneGltf} airplaneRef={airplaneRef} />
+      <AirplanesWithData blueAirplaneGltf={blueAirplaneGltf} redAirplaneGltf={redAirplaneGltf} blueAirplaneRef={blueAirplaneRef} redAirplaneRef={redAirplaneRef} velocity={velocity} />
     </Suspense>
   );
 };

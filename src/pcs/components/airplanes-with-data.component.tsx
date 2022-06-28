@@ -3,24 +3,31 @@ import React, { useRef } from 'react';
 import Airplanes from './airplanes.component';
 
 interface IAirplanesWithDataProps {
-  airplaneGltf: any;
-  airplaneRef: any;
+  blueAirplaneGltf: any;
+  redAirplaneGltf: any;
+  blueAirplaneRef: any;
+  redAirplaneRef: any;
+  velocity: number;
 };
 
-const AirplanesWithData = ({ airplaneGltf, airplaneRef }: IAirplanesWithDataProps): React.ReactElement => {
+const AirplanesWithData = ({ blueAirplaneGltf, redAirplaneGltf, blueAirplaneRef, redAirplaneRef, velocity }: IAirplanesWithDataProps): React.ReactElement => {
   const groupRef = useRef<any>();
 
   useFrame((state, delta) => {
-    groupRef.current.rotateZ(-0.001);
+    groupRef.current.rotateZ(-velocity);
+    groupRef.current.rotateX(-velocity);
   });
 
   return (
-    <group
-      position={[0,0,0]}
-      ref={groupRef}
-    >
-      <Airplanes airplaneGltf={airplaneGltf} airplaneRef={airplaneRef} />
-    </group>
+    <>
+      <group
+        position={[0,0,0]}
+        ref={groupRef}
+      >
+        <Airplanes airplaneGltf={blueAirplaneGltf} airplaneRef={blueAirplaneRef} airplaneDataSet={0} />
+        <Airplanes airplaneGltf={redAirplaneGltf} airplaneRef={redAirplaneRef} airplaneDataSet={1}/>
+      </group>
+    </>
   );
 };
 
