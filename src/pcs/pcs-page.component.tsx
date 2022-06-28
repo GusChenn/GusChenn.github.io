@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import GlobalWrapper from './components/global-wrapper.component';
 import H1 from './components/h1.component';
@@ -8,8 +8,6 @@ import Airplanes from './components/airplanes.component';
 import Nomes from './resources/nomes.svg';
 
 interface IPcsPageProps {};
-
-const positionTest = [[-5, 0, 1], [0, 5, 1]];
 
 const PcsPage = ({}: IPcsPageProps): React.ReactElement => {
   return (
