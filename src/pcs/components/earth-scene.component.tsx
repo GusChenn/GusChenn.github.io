@@ -9,9 +9,11 @@ const redAirplaneModelPath = './../perpendicular_airplane_red.glb';
 
 interface IEarthSceneProps {
   velocity: number;
+  dataSet1: number;
+  dataSet2: number;
 };
 
-const EarthScene = ({ velocity }: IEarthSceneProps): React.ReactElement => {
+const EarthScene = ({ velocity, dataSet1, dataSet2 }: IEarthSceneProps): React.ReactElement => {
   const earthRef = useRef<any>();
   const blueAirplaneRef = useRef<any>();
   const redAirplaneRef = useRef<any>();
@@ -27,7 +29,7 @@ const EarthScene = ({ velocity }: IEarthSceneProps): React.ReactElement => {
         position={[0, 0, 0]}
         scale={0.3}
       />
-      <AirplanesWithData blueAirplaneGltf={blueAirplaneGltf} redAirplaneGltf={redAirplaneGltf} blueAirplaneRef={blueAirplaneRef} redAirplaneRef={redAirplaneRef} velocity={velocity} />
+      <AirplanesWithData blueAirplaneGltf={blueAirplaneGltf} redAirplaneGltf={redAirplaneGltf} blueAirplaneRef={blueAirplaneRef} redAirplaneRef={redAirplaneRef} velocity={velocity} dataSet1={dataSet1} dataSet2={dataSet2} />
     </Suspense>
   );
 };

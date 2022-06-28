@@ -8,9 +8,11 @@ interface IAirplanesWithDataProps {
   blueAirplaneRef: any;
   redAirplaneRef: any;
   velocity: number;
+  dataSet1: number;
+  dataSet2: number;
 };
 
-const AirplanesWithData = ({ blueAirplaneGltf, redAirplaneGltf, blueAirplaneRef, redAirplaneRef, velocity }: IAirplanesWithDataProps): React.ReactElement => {
+const AirplanesWithData = ({ blueAirplaneGltf, redAirplaneGltf, blueAirplaneRef, redAirplaneRef, velocity, dataSet1, dataSet2 }: IAirplanesWithDataProps): React.ReactElement => {
   const groupRef = useRef<any>();
 
   useFrame((state, delta) => {
@@ -24,8 +26,8 @@ const AirplanesWithData = ({ blueAirplaneGltf, redAirplaneGltf, blueAirplaneRef,
         position={[0,0,0]}
         ref={groupRef}
       >
-        <Airplanes airplaneGltf={blueAirplaneGltf} airplaneRef={blueAirplaneRef} airplaneDataSet={0} />
-        <Airplanes airplaneGltf={redAirplaneGltf} airplaneRef={redAirplaneRef} airplaneDataSet={1}/>
+        <Airplanes airplaneGltf={blueAirplaneGltf} airplaneRef={blueAirplaneRef} airplaneDataSet={dataSet1} />
+        <Airplanes airplaneGltf={redAirplaneGltf} airplaneRef={redAirplaneRef} airplaneDataSet={dataSet2}/>
       </group>
     </>
   );
